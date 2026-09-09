@@ -1,17 +1,13 @@
-/* Minimal overrides on top of stock Bootstrap. */
-
 html {
   scroll-behavior: smooth;
 }
 
-/* Profile photo in the header */
 .hero-img {
   width: 180px;
   height: 180px;
   object-fit: cover;
 }
 
-/* Small section eyebrow labels (e.g. "01 — ABOUT") */
 .section-label {
   letter-spacing: 0.05em;
 }
