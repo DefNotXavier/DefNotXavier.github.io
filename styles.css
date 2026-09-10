@@ -61,33 +61,8 @@ html {
   }
 }
 
-/* AJAX page-transition fade, used by site.js when swapping
-   #page-content between files */
-#page-content {
-  opacity: 1;
-}
-
-#page-content.page-fade-out {
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-
-#page-content.page-fade-in {
-  opacity: 0;
-  animation: page-fade-in-anim 0.3s ease forwards;
-}
-
-@keyframes page-fade-in-anim {
-  to {
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #page-content.page-fade-out,
-  #page-content.page-fade-in {
-    opacity: 1;
-    animation: none;
-    transition: none;
-  }
+/* Each page's content sits in a .page-block; site.js appends the next
+   page's block here as you scroll, or jumps straight to one on nav click */
+.page-block {
+  display: block;
 }

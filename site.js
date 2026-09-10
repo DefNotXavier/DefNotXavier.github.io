@@ -1,16 +1,206 @@
 // site.js
-// Two independent pieces of behavior for the site, combined into one file:
-//   1. Scroll-reveal — fades/rises .reveal and .reveal-stagger elements
-//      into place as they scroll into the viewport.
-//   2. AJAX navigation — intercepts clicks on local .html links, fetches
-//      the destination page, and swaps its #page-content into the current
-//      document instead of doing a full browser reload, so moving between
-//      pages feels instant and continuous.
+// Treats the 5 pages as one continuous sequence: Home, Experience, Projects,
+// Skills, Contact. As the person scrolls to the bottom of the current
+// content, the next page in line is fetched and appended below it, so the
+// whole site reads as one long scrolling page even though it's really 5
+// separate files. Clicking a nav link loads (if needed) everything up to
+// that page and jumps straight to it.
 
-// ---- 1. Scroll reveal ------------------------------------------------
-// Exposed as window.initScrollReveal so it can be re-run after the AJAX
-// navigation below swaps in new page content (DOMContentLoaded only fires
-// once, but new .reveal elements show up on every navigation).
+(function () {
+  var PAGE_ORDER = [
+    "index.html",
+    "experience.html",
+    "projects.html",
+    "skills.html",
+    "contact.html",
+  ];
+
+  var PAGE_TITLES = {
+    "index.html": "Xavier Guinness Stout — Software Engineer",
+    "experience.html": "Experience — Xavier Guinness Stout",
+    "projects.html": "Projects — Xavier Guinness Stout",
+    "skills.html": "Skills — Xavier Guinness Stout",
+    "contact.html": "Contact — Xavier Guinness Stout",
+  };
+
+  var stream = document.getElementById("page-stream");
+  if (!stream) return;
+
+  // Tracks which pages have been appended, in order.
+  var loaded = [currentFile()];
+  var isLoadingNext = false;
+
+  function currentFile() {
+    var path = window.location.pathname.split("/").pop();
+    return path === "" || !path ? "index.html" : path;
+  }
+
+  function pageIndex(file) {
+    return PAGE_ORDER.indexOf(file);
+  }
+
+  function lastLoadedFile() {
+    return loaded[loaded.length - 1];
+  }
+
+  function setActiveNav(file) {
+    document.querySelectorAll(".nav-link").forEach(function (a) {
+      if (a.getAttribute("href") === file) {
+        a.classList.add("active");
+        a.setAttribute("aria-current", "page");
+      } else {
+        a.classList.remove("active");
+        a.removeAttribute("aria-current");
+      }
+    });
+  }
+
+  // Fetches one page and appends its .page-block to the stream.
+  // Returns the appended element (or the existing one if already loaded).
+  function loadPageBlock(file) {
+    var existing = stream.querySelector(
+      '.page-block[data-page="' + file + '"]',
+    );
+    if (existing) return Promise.resolve(existing);
+
+    return fetch(file)
+      .then(function (res) {
+        if (!res.ok) throw new Error("Failed to load " + file);
+        return res.text();
+      })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        var block = doc.querySelector('.page-block[data-page="' + file + '"]');
+        if (!block) throw new Error("No .page-block found in " + file);
+
+        stream.appendChild(block);
+        loaded.push(file);
+
+        if (window.initScrollReveal) {
+          window.initScrollReveal();
+        }
+        observeBlock(block);
+
+        return block;
+      })
+      .catch(function (err) {
+        console.error(err);
+        return null;
+      });
+  }
+
+  // Loads every page between the last-loaded one and the target, in order.
+  function ensureLoadedThrough(targetFile) {
+    var targetIdx = pageIndex(targetFile);
+    if (targetIdx === -1) return Promise.resolve(null);
+
+    var chain = Promise.resolve();
+    var lastIdx = pageIndex(lastLoadedFile());
+
+    if (targetIdx <= lastIdx) {
+      return Promise.resolve(
+        stream.querySelector('.page-block[data-page="' + targetFile + '"]'),
+      );
+    }
+
+    for (var i = lastIdx + 1; i <= targetIdx; i++) {
+      (function (file) {
+        chain = chain.then(function () {
+          return loadPageBlock(file);
+        });
+      })(PAGE_ORDER[i]);
+    }
+    return chain;
+  }
+
+  // ---- Nav / footer link clicks: jump straight to a page -------------
+  function isSequencedLink(link) {
+    var href = link.getAttribute("href");
+    return href && PAGE_ORDER.indexOf(href) !== -1;
+  }
+
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest("a");
+    if (!link || !isSequencedLink(link)) return;
+
+    var target = link.getAttribute("href");
+    e.preventDefault();
+
+    // Pages before where we currently are aren't kept loaded going
+    // backwards, so just do a normal navigation to them.
+    if (
+      pageIndex(target) < pageIndex(currentFile()) &&
+      !loaded.includes(target)
+    ) {
+      window.location.href = target;
+      return;
+    }
+
+    ensureLoadedThrough(target).then(function (block) {
+      if (!block) return;
+      block.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState({}, "", target);
+      document.title = PAGE_TITLES[target] || document.title;
+      setActiveNav(target);
+    });
+  });
+
+  // ---- Continuous scroll: auto-load the next page near the bottom ----
+  var scrollTicking = false;
+
+  function maybeLoadNext() {
+    var lastIdx = pageIndex(lastLoadedFile());
+    if (lastIdx === PAGE_ORDER.length - 1 || isLoadingNext) return;
+
+    var nearBottom =
+      window.innerHeight + window.scrollY >= document.body.offsetHeight - 400;
+
+    if (nearBottom) {
+      isLoadingNext = true;
+      loadPageBlock(PAGE_ORDER[lastIdx + 1]).then(function () {
+        isLoadingNext = false;
+      });
+    }
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(function () {
+        maybeLoadNext();
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  });
+
+  // ---- Track which section is on screen, update URL + active nav -----
+  var sectionObserver = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var file = entry.target.getAttribute("data-page");
+          setActiveNav(file);
+          document.title = PAGE_TITLES[file] || document.title;
+          history.replaceState({}, "", file);
+        }
+      });
+    },
+    { threshold: 0.4 },
+  );
+
+  function observeBlock(block) {
+    sectionObserver.observe(block);
+  }
+
+  // ---- Init: observe whichever block is already on the page ----------
+  document.querySelectorAll(".page-block").forEach(observeBlock);
+  setActiveNav(currentFile());
+})();
+
+// ---- Scroll reveal ------------------------------------------------
+// Fades/rises .reveal and .reveal-stagger elements into place as they
+// scroll into the viewport. Exposed as window.initScrollReveal so it can
+// be re-run whenever new content is appended to the page stream above.
 (function () {
   var currentObserver = null;
 
@@ -49,105 +239,4 @@
 
   window.initScrollReveal = initScrollReveal;
   document.addEventListener("DOMContentLoaded", initScrollReveal);
-})();
-// ---- 2. AJAX navigation -----------------------------------------------
-// Keeps the nav/footer persistent and swaps only the main content between
-// pages. Each file remains a complete, independently-valid page, so direct
-// visits and the W3C validator still work normally.
-(function () {
-  var main = document.getElementById("page-content");
-  if (!main) return;
-
-  function currentFile() {
-    var path = window.location.pathname.split("/").pop();
-    return path === "" ? "index.html" : path;
-  }
-
-  function isLocalPageLink(link) {
-    var href = link.getAttribute("href");
-    if (!href) return false;
-    if (
-      href.indexOf("http") === 0 ||
-      href.indexOf("mailto:") === 0 ||
-      href.indexOf("#") === 0
-    ) {
-      return false;
-    }
-    return href.slice(-5) === ".html";
-  }
-
-  function setActiveNav(url) {
-    document.querySelectorAll(".nav-link").forEach(function (a) {
-      if (a.getAttribute("href") === url) {
-        a.classList.add("active");
-        a.setAttribute("aria-current", "page");
-      } else {
-        a.classList.remove("active");
-        a.removeAttribute("aria-current");
-      }
-    });
-  }
-
-  function loadPage(url, addToHistory) {
-    main.classList.add("page-fade-out");
-
-    fetch(url)
-      .then(function (res) {
-        if (!res.ok) throw new Error("Failed to load " + url);
-        return res.text();
-      })
-      .then(function (html) {
-        var doc = new DOMParser().parseFromString(html, "text/html");
-        var newMain = doc.getElementById("page-content");
-        var newTitle = doc.querySelector("title");
-
-        window.setTimeout(function () {
-          if (newMain) {
-            main.innerHTML = newMain.innerHTML;
-          }
-          if (newTitle) {
-            document.title = newTitle.textContent;
-          }
-
-          setActiveNav(url);
-          window.scrollTo({ top: 0, behavior: "smooth" });
-
-          main.classList.remove("page-fade-out");
-          main.classList.add("page-fade-in");
-          window.setTimeout(function () {
-            main.classList.remove("page-fade-in");
-          }, 300);
-
-          if (window.initScrollReveal) {
-            window.initScrollReveal();
-          }
-        }, 180);
-
-        if (addToHistory) {
-          history.pushState({ url: url }, "", url);
-        }
-      })
-      .catch(function (err) {
-        console.error(err);
-        window.location.href = url; // fall back to a normal page load
-      });
-  }
-
-  document.addEventListener("click", function (e) {
-    var link = e.target.closest("a");
-    if (!link || !isLocalPageLink(link)) return;
-
-    var url = link.getAttribute("href");
-    if (url === currentFile()) {
-      e.preventDefault();
-      return;
-    }
-
-    e.preventDefault();
-    loadPage(url, true);
-  });
-
-  window.addEventListener("popstate", function () {
-    loadPage(currentFile(), false);
-  });
 })();
