@@ -15,7 +15,7 @@
       class="navbar navbar-expand-md bg-body-tertiary sticky-top border-bottom"
     >
       <div class="container">
-        <a class="navbar-brand fw-semibold" href="index.html">Xavier Stout</a>
+        <a class="navbar-brand fw-semibold" href="#top">Xavier Stout</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -27,118 +27,541 @@
         <div class="collapse navbar-collapse justify-content-end" id="navMenu">
           <ul class="navbar-nav gap-md-4">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
-                >Home</a
-              >
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="experience.html">Experience</a>
+              <a class="nav-link" href="#experience">Experience</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="projects.html">Projects</a>
+              <a class="nav-link" href="#projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="skills.html">Skills</a>
+              <a class="nav-link" href="#skills">Skills</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <main id="page-content">
-      <section class="py-5" id="top">
-        <div class="container py-4">
-          <div class="row align-items-center g-5 reveal">
-            <div class="col-md-8">
-              <div class="text-uppercase text-secondary small fw-semibold mb-3">
-                B.S. Computer Science · Software Engineering
-              </div>
-              <h1 class="display-5 fw-bold mb-4">Xavier Guinness Stout</h1>
-              <p class="lead text-body-secondary mb-4">
-                I'm a Computer Science &amp; Software Engineering student at
-                Montana Technological University with three software engineering
-                internships behind me — from RF signal processing on satellite
-                ground systems to full-stack web apps. This page is a record of
-                that work and the personal projects I build on the side.
-              </p>
-              <div
-                class="d-flex gap-4 flex-wrap small text-body-secondary text-uppercase"
-              >
-                <span>Montana Tech</span>
-                <span>Butte, MT</span>
-                <span>Incoming SWE, 2027</span>
-              </div>
+    <section class="py-5" id="top">
+      <div class="container py-4">
+        <div class="row align-items-center g-5">
+          <div class="col-md-8">
+            <div class="text-uppercase text-secondary small fw-semibold mb-3">
+              B.S. Computer Science · Software Engineering
             </div>
-            <div class="col-md-4 text-center">
-              <img
-                src="Images/Xavier_stare.jpg"
-                alt="Portrait photo of Xavier Guinness Stout"
-                class="hero-img rounded-circle border border-secondary-subtle shadow-sm"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="py-5 border-top">
-        <div class="container">
-          <div class="d-flex align-items-center gap-3 mb-5">
-            <span
-              class="section-label text-body-secondary small fw-semibold text-uppercase"
-              >About</span
+            <h1 class="display-5 fw-bold mb-4">Xavier Guinness Stout</h1>
+            <p class="lead text-body-secondary mb-4">
+              I'm a Computer Science & Software Engineering student at Montana
+              Technological University with three software engineering
+              internships behind me — from RF signal processing on satellite
+              ground systems to full-stack web apps. This page is a record of
+              that work and the personal projects I build on the side.
+            </p>
+            <div
+              class="d-flex gap-4 flex-wrap small text-body-secondary text-uppercase"
             >
-            <hr class="flex-grow-1 my-0" />
-          </div>
-          <div class="row g-5 reveal">
-            <div class="col-md-7">
-              <p class="text-body-secondary">
-                I got into software engineering through hands-on internship work
-                rather than the classroom — three summers of shipping real code
-                on real teams taught me most of what I know about building
-                things that actually hold up in production.
-              </p>
-              <p class="text-body-secondary">
-                My internship work has been split between low-level systems (RF
-                signal processing, embedded C++) and high-level architectural
-                programming in Python, with additional experience in full-stack
-                web development (React, TypeScript). My personal projects tend
-                to land somewhere in between — automation, APIs, and the
-                occasional excuse to hook a Raspberry Pi up to a data feed.
-              </p>
-              <p class="text-body-secondary">
-                Want the full story? Check out my
-                <a href="experience.html">work experience</a>, browse my
-                <a href="projects.html">personal projects</a>, or see the full
-                <a href="skills.html">list of tools and languages</a> I work
-                with.
-              </p>
+              <span>Montana Tech</span>
+              <span>Butte, MT</span>
+              <span>Incoming SWE, 2027</span>
             </div>
-            <div class="col-md-5">
-              <dl class="border-start ps-4">
-                <dt class="small text-uppercase text-secondary">Education</dt>
-                <dd>B.S. Computer Science, Montana Technological University</dd>
-                <dt class="small text-uppercase text-secondary mt-3">Focus</dt>
-                <dd>
-                  Systems programming, embedded software, web development,
-                  full-stack development
-                </dd>
-                <dt class="small text-uppercase text-secondary mt-3">
-                  Currently
-                </dt>
-                <dd>Teaching Assistant at Montana Tech, Butte, MT</dd>
-                <dt class="small text-uppercase text-secondary mt-3">Resume</dt>
-                <dd><a href="#">Download PDF ↓</a></dd>
-              </dl>
+          </div>
+          <div class="col-md-4 text-center">
+            <!-- Drop your photo at images/profile.jpg (or update the src below) -->
+            <img
+              src="Images/Xavier_stare.jpg"
+              alt="Xavier Guinness Stout"
+              class="hero-img rounded-circle border border-secondary-subtle shadow-sm"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-5 border-top">
+      <div class="container">
+        <div class="d-flex align-items-center gap-3 mb-5">
+          <span
+            class="section-label text-body-secondary small fw-semibold text-uppercase"
+            >01 — About</span
+          >
+          <hr class="flex-grow-1 my-0" />
+        </div>
+        <div class="row g-5">
+          <div class="col-md-7">
+            <p class="text-body-secondary">
+              I got into software engineering through hands-on internship work
+              rather than the classroom — three summers of shipping real code on
+              real teams taught me most of what I know about building things
+              that actually hold up in production.
+            </p>
+            <p class="text-body-secondary">
+              My internship work has been split between low-level systems (RF
+              signal processing, embedded C++) and high-level architectural
+              programming in Python, with additional experience in full-stack
+              web development (React, TypeScript). My personal projects tend to
+              land somewhere in between- Automation, APIs, and the occasional
+              excuse to hook a Raspberry Pi up to a data feed.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <dl class="border-start ps-4">
+              <dt class="small text-uppercase text-secondary">Education</dt>
+              <dd>B.S. Computer Science, Montana Technological University</dd>
+              <dt class="small text-uppercase text-secondary mt-3">Focus</dt>
+              <dd>
+                Systems programming, embedded software, web development,
+                full-stack development
+              </dd>
+              <dt class="small text-uppercase text-secondary mt-3">
+                Currently
+              </dt>
+              <dd>Teaching Assistant at Montana Tech, Butte, MT</dd>
+              <dt class="small text-uppercase text-secondary mt-3">Resume</dt>
+              <dd><a href="#">Download PDF ↓</a></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-5 border-top">
+      <div class="container">
+        <div class="d-flex align-items-center gap-3 mb-5">
+          <span
+            class="section-label text-body-secondary small fw-semibold text-uppercase"
+            >02 — Experience</span
+          >
+          <hr class="flex-grow-1 my-0" />
+        </div>
+
+        <div class="card bg-body-tertiary mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="card-title h5">Teaching Assistant</h3>
+                <div class="card-subtitle text-secondary">
+                  Montana Technological University
+                </div>
+                <div class="small text-body-secondary mt-1">
+                  Aug 2026 – Present · Butte, MT
+                </div>
+              </div>
+              <div class="col-md-8">
+                <ul class="text-body-secondary">
+                  <li>
+                    Assist the professor with grading student assignments in a
+                    timely fashion.
+                  </li>
+                  <li>
+                    Host office hours for students to drop in for private
+                    tutoring and assignment help.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+
+        <div class="card bg-body-tertiary mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="card-title h5">Software Engineer Intern</h3>
+                <div class="card-subtitle text-secondary">
+                  CACI International Inc
+                </div>
+                <div class="small text-body-secondary mt-1">
+                  Jun 2026 – Aug 2026 · Colorado Springs, CO
+                </div>
+              </div>
+              <div class="col-md-8">
+                <ul class="text-body-secondary">
+                  <li>
+                    Worked on the Digital Ground Team developing RF signal
+                    processing software for satellite ground station
+                    communication systems, covering digitization,
+                    channelization, and modulation/demodulation of satellite
+                    signals.
+                  </li>
+                  <li>
+                    Designed and deployed the system architecture for a
+                    dual-teleport channelizer project, doubling RF signal
+                    capacity from 2 to 4 channels within edge device
+                    constraints; validated with 24+ hours of stability testing
+                    on physical hardware.
+                  </li>
+                  <li>
+                    Built and deployed applications using Docker/Podman
+                    containers, configured CPU resource allocation, and managed
+                    multi-app deployments across physical servers and Proxmox
+                    VMs.
+                  </li>
+                  <li>
+                    Debugged production issues in demodulator and network
+                    connectivity code, and wrote automation tools, unit tests,
+                    and factory acceptance tests using C++, Python, and
+                    Agile/Jira/GitLab workflows.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-body-tertiary mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="card-title h5">Software Engineer Intern</h3>
+                <div class="card-subtitle text-secondary">
+                  Solstice Innovations
+                </div>
+                <div class="small text-body-secondary mt-1">
+                  May 2025 – Aug 2025 · Kalispell, MT
+                </div>
+              </div>
+              <div class="col-md-8">
+                <ul class="text-body-secondary">
+                  <li>
+                    Developed features for a web application using JavaScript
+                    and TypeScript, collaborating with the team to troubleshoot
+                    and resolve technical issues.
+                  </li>
+                  <li>
+                    Conducted regression testing and QA, identifying and fixing
+                    bugs across repositories to improve reliability.
+                  </li>
+                  <li>
+                    Maintained clear documentation of code changes and
+                    participated in daily stand-ups to track project progress.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-body-tertiary mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="card-title h5">Software Engineer Intern</h3>
+                <div class="card-subtitle text-secondary">
+                  Solstice Innovations
+                </div>
+                <div class="small text-body-secondary mt-1">
+                  May 2024 – Aug 2024 · Kalispell, MT
+                </div>
+              </div>
+              <div class="col-md-8">
+                <ul class="text-body-secondary">
+                  <li>
+                    Supported feature development in a React and TypeScript web
+                    application, gaining hands-on experience with modern
+                    front-end and back-end frameworks.
+                  </li>
+                  <li>
+                    Assisted in debugging and issue resolution, and participated
+                    in QA by executing test cases and reporting issues to the
+                    development team.
+                  </li>
+                  <li>
+                    Committed code to GitHub and implemented peer review
+                    feedback.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-5 border-top">
+      <div class="container">
+        <div class="d-flex align-items-center gap-3 mb-5">
+          <span
+            class="section-label text-body-secondary small fw-semibold text-uppercase"
+            >03 — Projects</span
+          >
+          <hr class="flex-grow-1 my-0" />
+        </div>
+
+        <div class="card bg-body-tertiary mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="card-title h5">Market Ticker V2</h3>
+                <div class="card-subtitle text-secondary small text-uppercase">
+                  Solo project · 2026–Present
+                </div>
+              </div>
+              <div class="col-md-8">
+                <p class="text-body-secondary">
+                  A touchscreen stock and crypto price display built for a 2.8"
+                  ESP32 TFT board. Shows live prices with historical charts
+                  (1-day, 1-month or 1-year ranges), a four-symbol multi-asset
+                  dashboard mode, and touch controls for searching tickers,
+                  switching ranges, and adjusting theme, brightness, and
+                  timezone. Sets up over WiFi via a captive portal with a QR
+                  code, and persists settings across reboots.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                  <span class="badge text-bg-secondary">C++</span>
+                  <span class="badge text-bg-secondary">ESP32</span>
+                  <span class="badge text-bg-secondary">TFT_eSPI</span>
+                  <span class="badge text-bg-secondary">WiFiManager</span>
+                  <span class="badge text-bg-secondary">ArduinoJson</span>
+                  <span class="badge text-bg-dark border">Private repo</span>
+                </div>
+
+                <div class="ratio ratio-16x9 mt-3">
+                  <iframe
+                    src="https://www.youtube.com/embed/WqRtwS6vh5o"
+                    title="Market Ticker demo"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-body-tertiary mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="card-title h5">Coinbase Day Trading Crypto Bot</h3>
+                <div class="card-subtitle text-secondary small text-uppercase">
+                  Solo project · Aug 2025–Present
+                </div>
+              </div>
+              <div class="col-md-8">
+                <p class="text-body-secondary">
+                  A cloud-based, automated cryptocurrency trading bot deployed
+                  on AWS. It uses the Coinbase API to execute trades and
+                  CoinGecko for real-time market data, algorithmically
+                  reinvesting weekly APY earnings from USDC into selected
+                  cryptocurrencies. DynamoDB tracks trade history to monitor
+                  profits, losses, and overdue positions, and an email-to-SMS
+                  system sends real-time alerts for monitoring and debugging.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                  <span class="badge text-bg-secondary">Python</span>
+                  <span class="badge text-bg-secondary">AWS</span>
+                  <span class="badge text-bg-secondary">DynamoDB</span>
+                  <span class="badge text-bg-secondary">Coinbase API</span>
+                  <span class="badge text-bg-secondary">CoinGecko API</span>
+                  <span class="badge text-bg-dark border">Private repo</span>
+                </div>
+                <div class="mt-3 p-3 rounded border bg-body">
+                  <pre class="mermaid">
+                    flowchart TD
+                        A[Scheduled run starts] --> B[Fetch market data & balance]
+                        B --> C[Score & select coin candidates]
+                        C --> D[Review open positions]
+                        D --> E{Time to sell?}
+                        E -->|Yes| F[Sell & log trade]
+                        E -->|No| G[Hold]
+                        F --> H[Buy new position if good candidate]
+                        G --> H
+                        H --> I[Send summary alert]
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-body-tertiary mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="card-title h5">Montana Route Planner</h3>
+                <div class="card-subtitle text-secondary small text-uppercase">
+                  Solo project · CSCI 470 · Jan–Apr 2026
+                </div>
+              </div>
+              <div class="col-md-8">
+                <p class="text-body-secondary">
+                  A full-stack LAMP web app for planning drives along Montana's
+                  interstate highways (I-90, I-15, I-94) with real-time weather
+                  forecasts pulled from the National Weather Service API.
+                  Includes an interactive Leaflet.js map with custom filtering,
+                  point-to-point route planning, and an authenticated admin
+                  panel backed by MySQL for reviewing route search history.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                  <span class="badge text-bg-secondary">PHP</span>
+                  <span class="badge text-bg-secondary">MySQL</span>
+                  <span class="badge text-bg-secondary">Leaflet.js</span>
+                  <span class="badge text-bg-secondary">NWS API</span>
+                </div>
+                <div class="ratio ratio-16x9 mt-3">
+                  <iframe
+                    src="https://www.youtube.com/embed/WaAFodiFJ9Y"
+                    title="Montana Route Planner demo"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="mt-2">
+                  <a href="https://github.com/DefNotXavier/WeatherApp"
+                    >GitHub →</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-body-tertiary mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="card-title h5">
+                  Embedded Crypto Market Dashboard V1
+                </h3>
+                <div class="card-subtitle text-secondary small text-uppercase">
+                  Solo project · Dec 2025–Jan 2026
+                </div>
+              </div>
+              <div class="col-md-8">
+                <p class="text-body-secondary">
+                  A real-time cryptocurrency dashboard in C++ built to run on a
+                  Raspberry Pi with a dedicated HDMI display. Fetches live and
+                  historical price data from the CoinGecko API, processes and
+                  normalizes time-series data, and renders a graphical interface
+                  with Raylib — showing live prices, 24-hour changes, historical
+                  graphs, and system health. Built with a modular architecture,
+                  mock data support, image caching, and multithreaded API access
+                  to respect rate limits.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                  <span class="badge text-bg-secondary">C++</span>
+                  <span class="badge text-bg-secondary">Raylib</span>
+                  <span class="badge text-bg-secondary">libcurl</span>
+                  <span class="badge text-bg-secondary">Raspberry Pi</span>
+                  <span class="badge text-bg-secondary">Embedded Systems</span>
+                </div>
+
+                <div class="mt-3">
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <div class="ratio ratio-16x9">
+                        <img
+                          src="Images/crypto-display-front.jpeg"
+                          class="rounded border"
+                          style="object-fit: cover"
+                          alt="Dashboard V1 front view"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="ratio ratio-16x9">
+                        <img
+                          src="Images/crypto-display-back.jpeg"
+                          class="rounded border"
+                          style="object-fit: cover"
+                          alt="Dashboard V1 back/wiring view"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-2">
+                  <a href="https://github.com/DefNotXavier/CryptoDisplay"
+                    >GitHub →</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-5 border-top">
+      <div class="container">
+        <div class="d-flex align-items-center gap-3 mb-5">
+          <span
+            class="section-label text-body-secondary small fw-semibold text-uppercase"
+            >04 — Skills</span
+          >
+          <hr class="flex-grow-1 my-0" />
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h3 class="h6 text-uppercase text-secondary">Languages</h3>
+            <ul class="list-group list-group-flush mt-3">
+              <li class="list-group-item bg-transparent">Python</li>
+              <li class="list-group-item bg-transparent">C++</li>
+              <li class="list-group-item bg-transparent">
+                JavaScript / TypeScript
+              </li>
+              <li class="list-group-item bg-transparent">PHP</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h6 text-uppercase text-secondary">
+              Frameworks &amp; Libraries
+            </h3>
+            <ul class="list-group list-group-flush mt-3">
+              <li class="list-group-item bg-transparent">React</li>
+              <li class="list-group-item bg-transparent">Raylib</li>
+              <li class="list-group-item bg-transparent">Leaflet.js</li>
+              <li class="list-group-item bg-transparent">libcurl</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h6 text-uppercase text-secondary">Tools &amp; Infra</h3>
+            <ul class="list-group list-group-flush mt-3">
+              <li class="list-group-item bg-transparent">AWS / DynamoDB</li>
+              <li class="list-group-item bg-transparent">Docker / Podman</li>
+              <li class="list-group-item bg-transparent">Proxmox</li>
+              <li class="list-group-item bg-transparent">MySQL</li>
+              <li class="list-group-item bg-transparent">Git / GitLab</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5 border-top">
+      <div class="container">
+        <div class="d-flex align-items-center gap-3 mb-5">
+          <span
+            class="section-label text-body-secondary small fw-semibold text-uppercase"
+            >05 — Contact</span
+          >
+          <hr class="flex-grow-1 my-0" />
+        </div>
+        <div class="d-flex flex-column gap-2">
+          <a
+            class="text-decoration-none"
+            href="mailto:Xavier.guinness@gmail.com"
+            >→ Xavier.guinness@gmail.com</a
+          >
+          <a class="text-decoration-none" href="https://github.com/DefNotXavier"
+            >→ github.com/DefNotXavier</a
+          >
+          <a
+            class="text-decoration-none"
+            href="https://www.linkedin.com/in/xavierguinnessstout"
+            >→ linkedin.com/in/xavierguinnessstout</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center py-4 border-top text-body-secondary small">
+      Built and deployed on GitHub Pages
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="site.js"></script>
   </body>
 </html>
