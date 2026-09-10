@@ -1,6 +1,3 @@
-// Fades/rises .reveal and .reveal-stagger elements into place as they
-// scroll into the viewport. Uses IntersectionObserver so it's cheap and
-// doesn't run on every scroll event.
 document.addEventListener("DOMContentLoaded", function () {
   var targets = document.querySelectorAll(".reveal, .reveal-stagger");
 
