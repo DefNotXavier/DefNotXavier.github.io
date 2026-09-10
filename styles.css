@@ -4,7 +4,7 @@ html {
 }
 
 /* Scroll-reveal: elements start hidden/offset, then fade+rise into place
-   when they enter the viewport. See scroll-reveal.js for the trigger. */
+   when they enter the viewport. See site.js for the trigger. */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -57,6 +57,37 @@ html {
   .reveal-stagger > * {
     opacity: 1;
     transform: none;
+    transition: none;
+  }
+}
+
+/* AJAX page-transition fade, used by site.js when swapping
+   #page-content between files */
+#page-content {
+  opacity: 1;
+}
+
+#page-content.page-fade-out {
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+#page-content.page-fade-in {
+  opacity: 0;
+  animation: page-fade-in-anim 0.3s ease forwards;
+}
+
+@keyframes page-fade-in-anim {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #page-content.page-fade-out,
+  #page-content.page-fade-in {
+    opacity: 1;
+    animation: none;
     transition: none;
   }
 }
