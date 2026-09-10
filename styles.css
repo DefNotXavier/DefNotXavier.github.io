@@ -3,8 +3,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Scroll-reveal: elements start hidden/offset, then fade+rise into place
-   when they enter the viewport. See site.js for the trigger. */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -18,7 +16,6 @@ html {
   transform: translateY(0);
 }
 
-/* Stagger cards within a section slightly so they don't all pop at once */
 .reveal-stagger > * {
   opacity: 0;
   transform: translateY(24px);
@@ -48,21 +45,6 @@ html {
   transition-delay: 0.32s;
 }
 
-/* Respect users who've asked for less motion */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .reveal,
-  .reveal-stagger > * {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-}
-
-/* Each page's content sits in a .page-block; site.js appends the next
-   page's block here as you scroll, or jumps straight to one on nav click */
 .page-block {
   display: block;
 }

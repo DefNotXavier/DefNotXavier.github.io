@@ -1,4 +1,3 @@
-// site.js
 // Treats the 5 pages as one continuous sequence: Home, Experience, Projects,
 // Skills, Contact. As the person scrolls to the bottom of the current
 // content, the next page in line is fetched and appended below it, so the
