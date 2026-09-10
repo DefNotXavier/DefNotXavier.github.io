@@ -3,6 +3,8 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Scroll-reveal: elements start hidden/offset, then fade+rise into place
+   when they enter the viewport. See site.js for the trigger. */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -16,6 +18,7 @@ html {
   transform: translateY(0);
 }
 
+/* Stagger cards within a section slightly so they don't all pop at once */
 .reveal-stagger > * {
   opacity: 0;
   transform: translateY(24px);
@@ -45,6 +48,14 @@ html {
   transition-delay: 0.32s;
 }
 
+/* Each page's content sits in a .page-block; site.js inserts the next
+   page's block above the sentinel as you scroll, or jumps straight to
+   one on nav click. The sentinel itself is invisible. */
 .page-block {
   display: block;
+}
+
+#load-sentinel-top,
+#load-sentinel-bottom {
+  height: 1px;
 }
