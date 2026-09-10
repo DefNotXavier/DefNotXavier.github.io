@@ -360,10 +360,19 @@
                 </div>
 
                 <!-- Architecture diagram placeholder — Mermaid flowchart goes here later -->
-                <div
-                  class="mt-3 p-4 rounded border bg-body text-center text-body-secondary small"
-                >
-                  [ Architecture diagram placeholder ]
+                <div class="mt-3 p-3 rounded border bg-body">
+                  <pre class="mermaid">
+flowchart TD
+    A[Scheduled run starts] --> B[Fetch market data & balance]
+    B --> C[Score & select coin candidates]
+    C --> D[Review open positions]
+    D --> E{Time to sell?}
+    E -->|Yes| F[Sell & log trade]
+    E -->|No| G[Hold]
+    F --> H[Buy new position if good candidate]
+    G --> H
+    H --> I[Send summary alert]
+                  </pre>
                 </div>
 
                 <!-- Screenshot: drop a file at images/trading-bot.png and uncomment below -->
