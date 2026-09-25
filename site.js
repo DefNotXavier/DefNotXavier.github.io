@@ -1,5 +1,5 @@
-// site.js — treats the 5 pages as one scrollable sequence (Home, Experience,
-// Projects, Skills, Contact). Scrolling near the bottom loads the next page;
+// site.js — treats the 5 pages as one scrollable sequence
+// Scrolling near the bottom loads the next page;
 // scrolling near the top loads the previous one; nav links jump straight to
 // a page, loading anything missing along the way (forward or backward).
 
