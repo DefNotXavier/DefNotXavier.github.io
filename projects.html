@@ -180,24 +180,48 @@
                       <div
                         class="card-subtitle text-secondary small text-uppercase"
                       >
-                        Solo project · CSCI 470 · Jan–Apr 2026
+                        Solo project · CSCI 470 · Jan 2026–Present
                       </div>
                     </div>
                     <div class="col-md-8">
                       <p class="text-body-secondary">
-                        A full-stack LAMP web app for planning drives along
-                        Montana's interstate highways (I-90, I-15, I-94) with
-                        real-time weather forecasts pulled from the National
-                        Weather Service API. Includes an interactive Leaflet.js
-                        map with custom filtering, point-to-point route
-                        planning, and an authenticated admin panel backed by
-                        MySQL for reviewing route search history.
+                        A web app for planning drives along Montana's
+                        interstates (I-90, I-15, I-94) with National Weather
+                        Service forecasts along the route. I first built it as
+                        a LAMP app for CSCI 470, then rebuilt the backend in Go
+                        on PostgreSQL/PostGIS with Redis, all running in
+                        Docker. Highways, the state border, and points of
+                        interest are stored as real geometries. Routes are
+                        found with Dijkstra's algorithm, and NWS forecasts are
+                        cached in Redis, which took each weather checkpoint
+                        from about 600 ms to under 1 ms.
                       </p>
                       <div class="d-flex flex-wrap gap-2 mb-2">
-                        <span class="badge text-bg-secondary">PHP</span>
-                        <span class="badge text-bg-secondary">MySQL</span>
+                        <span class="badge text-bg-secondary">Go</span>
+                        <span class="badge text-bg-secondary">PostgreSQL</span>
+                        <span class="badge text-bg-secondary">PostGIS</span>
+                        <span class="badge text-bg-secondary">Redis</span>
+                        <span class="badge text-bg-secondary">Docker</span>
+                        <span class="badge text-bg-secondary">JavaScript</span>
                         <span class="badge text-bg-secondary">Leaflet.js</span>
                         <span class="badge text-bg-secondary">NWS API</span>
+                      </div>
+                      <div class="mt-3 p-3 rounded border bg-body">
+                        <ul class="text-body-secondary mb-0">
+                          <li>Pick a start and end on the map</li>
+                          <li>PostGIS snaps both to the nearest highway</li>
+                          <li>
+                            Dijkstra finds the shortest route across the
+                            interstates
+                          </li>
+                          <li>Weather checkpoints are placed every 15 miles</li>
+                          <li>
+                            PostGIS finds the towns and passes along the way
+                          </li>
+                          <li>
+                            Forecasts load from Redis, or NWS on a cache miss
+                          </li>
+                        </ul>
                       </div>
                       <div class="ratio ratio-16x9 mt-3">
                         <iframe
