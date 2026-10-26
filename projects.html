@@ -411,6 +411,95 @@
                   </div>
                 </div>
               </div>
+
+              <div class="card bg-body-tertiary mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h2 class="card-title h5">Paper Chat</h2>
+                      <div
+                        class="card-subtitle text-secondary small text-uppercase"
+                      >
+                        Solo project · First CS project · Revived Oct 2026
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <p class="text-body-secondary">
+                        A real-time chat room drawn on lined notebook paper, and
+                        the first CS project I ever built, in my freshman year.
+                        The original version ran on a Node.js/Express server
+                        with Socket.IO and MongoDB, so it only worked while I
+                        had a server running. I rebuilt it to be hosted free,
+                        24/7, with no server at all. The page is static HTML,
+                        CSS and JavaScript on GitHub Pages, and Firebase
+                        Realtime Database pushes every message to every open
+                        tab instantly. A live "Active Users" count uses Firebase
+                        presence with onDisconnect(). With no logins, database
+                        security rules protect the data: anyone can post,
+                        nobody can edit or delete, and messages are capped at
+                        500 characters with server timestamps. Two GitHub
+                        Actions handle the ops: one deploys the site on every
+                        push, and a nightly cron job wipes the chat at midnight
+                        UTC.
+                      </p>
+                      <div class="d-flex flex-wrap gap-2 mb-2">
+                        <span class="badge text-bg-secondary">JavaScript</span>
+                        <span class="badge text-bg-secondary">HTML/CSS</span>
+                        <span class="badge text-bg-secondary"
+                          >Firebase Realtime Database</span
+                        >
+                        <span class="badge text-bg-secondary">GitHub Pages</span>
+                        <span class="badge text-bg-secondary"
+                          >GitHub Actions</span
+                        >
+                        <span class="badge text-bg-secondary"
+                          >Originally: Node.js · Socket.IO · MongoDB</span
+                        >
+                      </div>
+                      <div class="mt-3 p-3 rounded border bg-body">
+                        <ul class="text-body-secondary mb-0">
+                          <li>GitHub Pages serves the static page</li>
+                          <li>Pick a name and send a message</li>
+                          <li>
+                            The message is written to Firebase with a server
+                            timestamp
+                          </li>
+                          <li>
+                            Firebase streams it to every open tab in real time
+                          </li>
+                          <li>
+                            Security rules reject edits, deletes and oversized
+                            messages
+                          </li>
+                          <li>
+                            A GitHub Actions cron job clears the chat every
+                            midnight UTC
+                          </li>
+                        </ul>
+                      </div>
+                      <div
+                        class="ratio mt-3 mx-auto"
+                        style="--bs-aspect-ratio: 177.78%; max-width: 320px"
+                      >
+                        <iframe
+                          src="https://www.youtube.com/embed/HkowXp66xIY"
+                          title="Paper Chat: how it works (YouTube Short)"
+                          allowfullscreen
+                        ></iframe>
+                      </div>
+                      <div class="mt-2">
+                        <a href="https://defnotxavier.github.io/paper-chat/"
+                          >Live site →</a
+                        >
+                        <span class="text-secondary mx-2">·</span>
+                        <a href="https://github.com/DefNotXavier/paper-chat"
+                          >GitHub →</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
