@@ -47,6 +47,15 @@ html {
 .reveal-stagger.is-visible > *:nth-child(5) {
   transition-delay: 0.32s;
 }
+.reveal-stagger.is-visible > *:nth-child(6) {
+  transition-delay: 0.4s;
+}
+.reveal-stagger.is-visible > *:nth-child(7) {
+  transition-delay: 0.48s;
+}
+.reveal-stagger.is-visible > *:nth-child(8) {
+  transition-delay: 0.56s;
+}
 
 /* Each page's content sits in a .page-block; site.js inserts the next
    page's block above the sentinel as you scroll, or jumps straight to
@@ -101,6 +110,13 @@ h3,
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: 72% 40%;
+  transition: transform 0.8s cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+/* One full spin on hover (or tap on touch screens) */
+.hero-img:hover,
+.hero-img:active {
+  transform: rotate(360deg);
 }
 
 .section-label {
@@ -150,7 +166,110 @@ h3,
   border: 1px solid var(--bs-border-color);
   background: rgba(255, 255, 255, 0.03);
   font-size: 0.875rem;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
+
+.skill-chip:hover {
+  border-color: #3a4150;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Skills used professionally get the accent tint */
+.skill-chip.core {
+  background: rgba(91, 156, 255, 0.12);
+  border-color: rgba(91, 156, 255, 0.3);
+  color: #a9cbff;
+}
+
+.skill-chip.legend-dot {
+  padding: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  vertical-align: -0.05rem;
+}
+
+.skill-subhead {
+  letter-spacing: 0.08em;
+}
+
+/* Skills page: category card header (icon, title, count) */
+.skill-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card-head h3 {
+  font-weight: 600;
+}
+
+.skill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.6rem;
+  background: rgba(91, 156, 255, 0.12);
+  color: var(--bs-primary);
+}
+
+.skill-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.skill-count {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bs-secondary-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-card:hover {
+  border-color: rgba(91, 156, 255, 0.35);
+}
+
+/* Core stack tiles: accent bar on the left, name + where it was used */
+.core-skill {
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--bs-border-color);
+  border-left: 3px solid var(--bs-primary);
+  border-radius: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(91, 156, 255, 0.08),
+    rgba(23, 26, 33, 1) 60%
+  );
+  transition: border-color 0.2s ease;
+}
+
+.core-skill:hover {
+  border-color: rgba(91, 156, 255, 0.4);
+  border-left-color: var(--bs-primary);
+}
+
+.core-skill-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.core-skill-where {
+  font-size: 0.875rem;
+  color: var(--bs-secondary-color);
+  line-height: 1.5;
+}
+
 
 .contact-card {
   text-decoration: none;
@@ -173,7 +292,8 @@ iframe,
   }
   .reveal,
   .reveal-stagger > *,
-  .card {
+  .card,
+  .hero-img {
     transition: none;
     transform: none;
   }

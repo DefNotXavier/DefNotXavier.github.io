@@ -72,100 +72,210 @@
               </h1>
               <hr class="flex-grow-1 my-0" />
             </div>
-            <p class="text-body-secondary mb-5">
-              Languages, frameworks, and infrastructure tools I've used across
-              internships and personal projects.
+            <p class="text-body-secondary mb-4">
+              Languages, frameworks, and infrastructure I've used across three
+              software engineering internships, two senior projects, and my
+              personal builds.
             </p>
+
+            <!-- Core stack: the skills I lean on most, with where I used them -->
+            <h2 class="h6 text-uppercase text-secondary mb-3 skill-subhead">
+              Core stack
+            </h2>
+            <div class="row g-3 mb-5 reveal-stagger">
+              <div class="col-sm-6 col-lg-4">
+                <div class="core-skill h-100">
+                  <div class="core-skill-name">C++</div>
+                  <p class="core-skill-where mb-0">
+                    RF signal processing for satellite ground systems at CACI;
+                    Raspberry Pi and ESP32 displays
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="core-skill h-100">
+                  <div class="core-skill-name">Python</div>
+                  <p class="core-skill-where mb-0">
+                    CACI automation and tests, a serverless AWS trading bot, and
+                    sensor data validation
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="core-skill h-100">
+                  <div class="core-skill-name">TypeScript &amp; React</div>
+                  <p class="core-skill-where mb-0">
+                    Feature work, debugging, and QA over two summers at Solstice
+                    Innovations
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="core-skill h-100">
+                  <div class="core-skill-name">Go &amp; PostGIS</div>
+                  <p class="core-skill-where mb-0">
+                    Montana Route Planner API: Dijkstra routing, spatial
+                    queries, Redis caching
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="core-skill h-100">
+                  <div class="core-skill-name">Docker &amp; Linux</div>
+                  <p class="core-skill-where mb-0">
+                    Container deployments at CACI; migrating WeatherShare from a
+                    VM to 3 Compose services
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4">
+                <div class="core-skill h-100">
+                  <div class="core-skill-name">AWS &amp; CI/CD</div>
+                  <p class="core-skill-where mb-0">
+                    Lambda, DynamoDB, and EventBridge, deployed on every push
+                    with GitHub Actions
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Full toolbox, grouped by category -->
+            <div class="d-flex flex-wrap align-items-baseline gap-3 mb-3">
+              <h2 class="h6 text-uppercase text-secondary mb-0 skill-subhead">
+                Full toolbox
+              </h2>
+              <span class="small text-body-secondary">
+                <span class="skill-chip core legend-dot"></span> used
+                professionally
+              </span>
+            </div>
             <div class="row g-4 reveal-stagger">
               <div class="col-md-6 col-lg-4">
-                <div class="card bg-body-tertiary h-100">
+                <div class="card bg-body-tertiary h-100 skill-card">
                   <div class="card-body">
-                    <h2 class="h6 text-uppercase text-secondary mb-3">
-                      Languages
-                    </h2>
+                    <div class="skill-card-head">
+                      <span class="skill-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6" /></svg>
+                      </span>
+                      <h3 class="h6 mb-0">Languages</h3>
+                      <span class="skill-count">12</span>
+                    </div>
                     <div class="d-flex flex-wrap gap-2">
-                      <span class="skill-chip">Python</span>
-                      <span class="skill-chip">C++</span>
+                      <span class="skill-chip core">Python</span>
+                      <span class="skill-chip core">C++</span>
+                      <span class="skill-chip core">TypeScript</span>
+                      <span class="skill-chip core">JavaScript</span>
                       <span class="skill-chip">Go</span>
-                      <span class="skill-chip">JavaScript</span>
-                      <span class="skill-chip">TypeScript</span>
+                      <span class="skill-chip">C#</span>
                       <span class="skill-chip">SQL</span>
                       <span class="skill-chip">PHP</span>
                       <span class="skill-chip">Bash</span>
                       <span class="skill-chip">PowerShell</span>
-                      <span class="skill-chip">HTML/CSS</span>
                       <span class="skill-chip">CircuitPython</span>
+                      <span class="skill-chip">HTML/CSS</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4">
-                <div class="card bg-body-tertiary h-100">
+                <div class="card bg-body-tertiary h-100 skill-card">
                   <div class="card-body">
-                    <h2 class="h6 text-uppercase text-secondary mb-3">
-                      Frameworks &amp; Libraries
-                    </h2>
+                    <div class="skill-card-head">
+                      <span class="skill-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5ZM2 12l10 5 10-5M2 17l10 5 10-5" /></svg>
+                      </span>
+                      <h3 class="h6 mb-0">Frameworks &amp; Libraries</h3>
+                      <span class="skill-count">18</span>
+                    </div>
                     <div class="d-flex flex-wrap gap-2">
-                      <span class="skill-chip">React</span>
-                      <span class="skill-chip">MUI</span>
-                      <span class="skill-chip">Bootstrap</span>
-                      <span class="skill-chip">Leaflet.js</span>
+                      <span class="skill-chip core">React</span>
+                      <span class="skill-chip core">MUI</span>
+                      <span class="skill-chip">Node.js</span>
                       <span class="skill-chip">Express</span>
                       <span class="skill-chip">Socket.IO</span>
+                      <span class="skill-chip">Bootstrap</span>
+                      <span class="skill-chip">Leaflet.js</span>
+                      <span class="skill-chip">Firebase SDK</span>
+                      <span class="skill-chip">boto3</span>
+                      <span class="skill-chip">pgx</span>
+                      <span class="skill-chip">go-redis</span>
+                      <span class="skill-chip">Bleak (BLE)</span>
                       <span class="skill-chip">Raylib</span>
                       <span class="skill-chip">libcurl</span>
-                      <span class="skill-chip">boto3</span>
+                      <span class="skill-chip">nlohmann/json</span>
+                      <span class="skill-chip">TFT_eSPI</span>
+                      <span class="skill-chip">ArduinoJson</span>
+                      <span class="skill-chip">WiFiManager</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4">
-                <div class="card bg-body-tertiary h-100">
+                <div class="card bg-body-tertiary h-100 skill-card">
                   <div class="card-body">
-                    <h2 class="h6 text-uppercase text-secondary mb-3">
-                      Databases
-                    </h2>
+                    <div class="skill-card-head">
+                      <span class="skill-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3" /></svg>
+                      </span>
+                      <h3 class="h6 mb-0">Databases</h3>
+                      <span class="skill-count">8</span>
+                    </div>
                     <div class="d-flex flex-wrap gap-2">
-                      <span class="skill-chip">PostgreSQL / PostGIS</span>
+                      <span class="skill-chip">PostgreSQL</span>
+                      <span class="skill-chip">PostGIS</span>
                       <span class="skill-chip">Redis</span>
-                      <span class="skill-chip">MySQL / MariaDB</span>
+                      <span class="skill-chip">MySQL</span>
+                      <span class="skill-chip">MariaDB</span>
                       <span class="skill-chip">DynamoDB</span>
-                      <span class="skill-chip">Firebase Realtime Database</span>
+                      <span class="skill-chip">Firebase Realtime DB</span>
                       <span class="skill-chip">MongoDB</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4">
-                <div class="card bg-body-tertiary h-100">
+                <div class="card bg-body-tertiary h-100 skill-card">
                   <div class="card-body">
-                    <h2 class="h6 text-uppercase text-secondary mb-3">
-                      Cloud &amp; DevOps
-                    </h2>
+                    <div class="skill-card-head">
+                      <span class="skill-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M17.5 19H7a5 5 0 1 1 1.1-9.9A6 6 0 0 1 19.6 11 4 4 0 0 1 17.5 19Z" /></svg>
+                      </span>
+                      <h3 class="h6 mb-0">Cloud &amp; Infrastructure</h3>
+                      <span class="skill-count">12</span>
+                    </div>
                     <div class="d-flex flex-wrap gap-2">
+                      <span class="skill-chip core">Docker</span>
+                      <span class="skill-chip core">Podman</span>
+                      <span class="skill-chip core">Proxmox</span>
+                      <span class="skill-chip core">Linux</span>
+                      <span class="skill-chip">Docker Compose</span>
                       <span class="skill-chip">AWS Lambda</span>
                       <span class="skill-chip">EventBridge</span>
                       <span class="skill-chip">IAM</span>
-                      <span class="skill-chip">Docker / Compose</span>
-                      <span class="skill-chip">Podman</span>
-                      <span class="skill-chip">Proxmox</span>
+                      <span class="skill-chip">Firebase</span>
                       <span class="skill-chip">GitHub Actions</span>
                       <span class="skill-chip">GitHub Pages</span>
-                      <span class="skill-chip">Linux</span>
+                      <span class="skill-chip">Apache</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-6 col-lg-4">
-                <div class="card bg-body-tertiary h-100">
+                <div class="card bg-body-tertiary h-100 skill-card">
                   <div class="card-body">
-                    <h2 class="h6 text-uppercase text-secondary mb-3">
-                      Embedded &amp; Hardware
-                    </h2>
+                    <div class="skill-card-head">
+                      <span class="skill-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2" /><path d="M9 9h6v6H9zM9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" /></svg>
+                      </span>
+                      <h3 class="h6 mb-0">Embedded &amp; Hardware</h3>
+                      <span class="skill-count">8</span>
+                    </div>
                     <div class="d-flex flex-wrap gap-2">
+                      <span class="skill-chip core">Edge devices</span>
                       <span class="skill-chip">ESP32</span>
                       <span class="skill-chip">Raspberry Pi</span>
-                      <span class="skill-chip">RP2040</span>
+                      <span class="skill-chip">Seeed XIAO RP2040</span>
+                      <span class="skill-chip">Bluetooth / BLE</span>
                       <span class="skill-chip">USB HID</span>
                       <span class="skill-chip">Web Serial</span>
                       <span class="skill-chip">3D printing</span>
@@ -174,21 +284,73 @@
                 </div>
               </div>
               <div class="col-md-6 col-lg-4">
-                <div class="card bg-body-tertiary h-100">
+                <div class="card bg-body-tertiary h-100 skill-card">
                   <div class="card-body">
-                    <h2 class="h6 text-uppercase text-secondary mb-3">
-                      Domains &amp; Practices
-                    </h2>
+                    <div class="skill-card-head">
+                      <span class="skill-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8Z" /></svg>
+                      </span>
+                      <h3 class="h6 mb-0">Tools</h3>
+                      <span class="skill-count">7</span>
+                    </div>
                     <div class="d-flex flex-wrap gap-2">
-                      <span class="skill-chip">RF / DSP</span>
-                      <span class="skill-chip">TCP/UDP networking</span>
+                      <span class="skill-chip core">Git</span>
+                      <span class="skill-chip core">GitHub</span>
+                      <span class="skill-chip core">GitLab</span>
+                      <span class="skill-chip core">Jira</span>
+                      <span class="skill-chip core">VS Code</span>
+                      <span class="skill-chip">CMake</span>
+                      <span class="skill-chip">Claude Code</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card bg-body-tertiary h-100 skill-card">
+                  <div class="card-body">
+                    <div class="skill-card-head">
+                      <span class="skill-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4.9 19.1a10 10 0 0 1 0-14.2M7.8 16.2a6 6 0 0 1 0-8.4M16.2 7.8a6 6 0 0 1 0 8.4M19.1 4.9a10 10 0 0 1 0 14.2" /><circle cx="12" cy="12" r="2" /></svg>
+                      </span>
+                      <h3 class="h6 mb-0">Domains</h3>
+                      <span class="skill-count">10</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="skill-chip core">RF / DSP</span>
+                      <span class="skill-chip core">Channelization</span>
+                      <span class="skill-chip core">Modulation / demodulation</span>
+                      <span class="skill-chip core">TCP/UDP networking</span>
                       <span class="skill-chip">REST APIs</span>
-                      <span class="skill-chip">Geospatial</span>
+                      <span class="skill-chip">API integration</span>
+                      <span class="skill-chip">Geospatial / GeoJSON</span>
                       <span class="skill-chip">Caching</span>
-                      <span class="skill-chip">Unit &amp; acceptance testing</span>
-                      <span class="skill-chip">Agile / Jira</span>
-                      <span class="skill-chip">Git / GitLab</span>
-                      <span class="skill-chip">Code review</span>
+                      <span class="skill-chip">Real-time systems</span>
+                      <span class="skill-chip">Algorithmic trading</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card bg-body-tertiary h-100 skill-card">
+                  <div class="card-body">
+                    <div class="skill-card-head">
+                      <span class="skill-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1" /><path d="m22 4-10 10-3-3" /></svg>
+                      </span>
+                      <h3 class="h6 mb-0">Practices</h3>
+                      <span class="skill-count">10</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="skill-chip core">Agile / stand-ups</span>
+                      <span class="skill-chip core">Code review</span>
+                      <span class="skill-chip core">System architecture</span>
+                      <span class="skill-chip core">Unit testing</span>
+                      <span class="skill-chip core">Factory acceptance testing</span>
+                      <span class="skill-chip core">Regression testing / QA</span>
+                      <span class="skill-chip core">Production debugging</span>
+                      <span class="skill-chip core">Technical documentation</span>
+                      <span class="skill-chip">CI/CD</span>
+                      <span class="skill-chip">Data validation</span>
                     </div>
                   </div>
                 </div>
